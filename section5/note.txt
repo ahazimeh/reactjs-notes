@@ -1,0 +1,7 @@
+66 understanding keys
+
+//both work
+style={{'background-color': 'red'}}
+style={{backgroundColor: 'red'}}
+
+Math.max(...dataPointValues)//dataPointValues is an array so we return it as parameters

@@ -1,0 +1,25 @@
+onChange would act same as onInput but can also listen for other inputs like dropdown
+
+One state
+const [userInput, setUserInput] = useState({
+    enteredTitle: '',
+    enteredAmount: '',
+    enteredDate: '',
+})
+//wrong way, it may fail in niche cases because if there was another scheduled state update running and userInput was outdated
+//the other soln guarantee to you that the previous state //56 
+setUserInput({
+    ...userInput,
+    enteredTitle: event.target.value
+})
+//
+setUserInput((prevState) => {
+    return { ...prevState, enteredTitle: event.target.value }
+})
+
+in react 2 way binding is done just by setting value of element to a state
+
+const saveExpenseDataHandler = (enteredExpenseData) => {
+    
+}
+<ExpenseForm onSaveExpenseData = {saveExpenseDataHandler}/> as convention if the value of the prop is a fn to be triggered inside the component then it starts with on

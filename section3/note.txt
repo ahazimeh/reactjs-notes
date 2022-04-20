@@ -1,0 +1,12 @@
+date.toLocalString('en-US', {month: 'long'})//for month
+date.toLocalString('en-US', {day: '2-digit'})//for day
+date.getFullYear()
+
+to set a class for a component then give it a className and this className will be a props for this component so you access it as props.className
+
+before in react we used React.createElement 42
+
+in components, he made a subfolder called UI for the general user interface
+
+html button element
+it is a convention for eventListener functions to end with Handler word but you don't have to follow this
