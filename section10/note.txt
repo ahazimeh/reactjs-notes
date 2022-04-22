@@ -1,0 +1,5 @@
+useEffect(() => {
+    setFormIsValid(enteredEmail.includes('@') && enteredPassword.trim().length > 6)
+}, [enteredEmail, enteredPassword])
+//as a rule you add as depencies what you are using in the side effect fn
+
