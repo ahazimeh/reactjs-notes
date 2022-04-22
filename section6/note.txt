@@ -1,1 +1,8 @@
 style={{color: !isValid?'red':'black'}}
+
+`` template literal
+<div className={`form-control ${!isValid ? 'invalid':''}`}
+
+//styled components
+import styled from "styled-components"
+const Button = styled.button``;//tact template literal
