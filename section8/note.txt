@@ -1,0 +1,6 @@
+same for class and classNmae, use htmlFor rather than for but for would also work with a warning in the console
+using for is also import for screen readers as well
+
+const [value, setValue] = useState('') //this syntax on the left is called array distructuring
+
+lifting state up
