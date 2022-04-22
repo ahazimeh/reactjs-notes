@@ -51,3 +51,18 @@ const ErrorModal = (props) => {
 };
 
 export default ErrorModal;
+
+
+//Ref
+we can initialize it as well but in the tutorial we didn't need to
+const nameInputRef = useRef();
+and for the input add the prop, ref={nameInputRef}
+//on submit
+console.log(nameInputRef.current.value);
+//to reset the values, here it is ok to manipulate the dom
+nameInputRef.current.value = '';
+
+for inputs using refs we call them uncontrolled components
+we are letting the user enter his values and we are getting the values by accessing the dom
+we are not controlling these elements with a state, we are not letting react have control over the elements
+but rather we are using the default behavior of the input fields
