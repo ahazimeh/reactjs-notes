@@ -37,3 +37,9 @@ const { isValid: emailIsValid } = emailState;
 const { isValid: passwordIsValid } = passwordState;
 and now rather than adding emailState and passwordState as dependencies we just add emailIsValid passwordIsValid
 note that isValid is element in the emailState and passwordState
+
+react context
+make a folder next to App.js(can be called state, store, context...)
+file inside it called auth-context.js
+
+to listen for a context we either use auth context consumer or by using a react hook
