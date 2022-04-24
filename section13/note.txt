@@ -1,0 +1,18 @@
+componentDidUpdate(prevProps, prevState) {
+
+}
+
+to use context in class components you have 2 options
+either use context consumer(same as shown for functional components)
+
+or on the top of the class define
+static contextType = UsersContext;
+//and then you can access it by this.context.users
+but with this approach you can't use more than 1 context for a component
+
+
+Error Boundaries
+you can wrape some components around a component that would possibly generate an error and the output will not be the error screen, but rather this part of the code will be replaced with this error component code
+<ErrorBoundary>
+    <Users users={this.state.filteredUsers} />
+</ErrorBoundary>
