@@ -1,0 +1,13 @@
+props.price.toFixed(2) //to always render 2 decimal places
+
+<input {...props.input}/> //rather than defining id, type, name...
+
+
+//we want to get the sum of items ordered knowing that each object could have more than 1 item
+const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount
+})
+
+.concat is different than .push where it returns a new array
+
+state.items.findIndex(item => items.id === action.item.id)
