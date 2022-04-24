@@ -1,0 +1,12 @@
+const response = fetch('...');
+const data = await response.json();
+
+and this is where we make it to the catch block
+if(!response.ok) {
+    throw new Error('Something went wrong');
+}
+
+//in the catch block
+catch(error) {
+    setError(error.message)
+}
