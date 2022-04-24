@@ -1,0 +1,30 @@
+export default React.memo(DemoOutput)  //so the component don't get rerendered if non of its props was modified
+
+useCallback will let react use same function reference each time the component rerenders
+const toggleParagraphHandler = useCallback(() => {
+    if (allowToggle) {
+      setShowParagraph((prevShowParagraph) => !prevShowParagraph);
+    }
+  }, [allowToggle]);// here we tell when we need to reinitialize the fn
+//links to check
+????https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+????now how do reactMemo works with Context, Redux, and 
+
+
+if the same state was changed multiple times then the order of this change is kept
+
+state batching
+if there are 2 state updates in the same synchronous code snippet then react will batch these 2 states and rerender the component once only
+
+
+for arrays, useMemo
+
+child component
+//we do this to not resort the array if it didn't change
+const sortedList = useMemo(() => {
+    console.log('Items sorted');
+    return items.sort((a, b) => a - b);
+  }, [items]); 
+//parent component
+const listItems = useMemo(() => [5, 3, 1, 10, 9], []);
