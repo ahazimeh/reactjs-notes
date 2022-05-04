@@ -1,0 +1,12 @@
+sideEffects, async tasks & redux
+we can either add such code in the components
+or we create something which is called action creator
+
+where to put the logic:
+we often have the choice between fat reducers, fat components, or fat actions
+for synchronous code
+it is better to add logic bl reducers and not add it all in the component
+
+for async code you should prefer action creators or components and never use reducers
+
+for sync code: we can listen for a change from redux in the component and send the request to firebase bl useEffect
