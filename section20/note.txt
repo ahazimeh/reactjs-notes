@@ -53,3 +53,48 @@ history.push({
     pathname: location.pathname,
     search: ?sort='asc'
 })
+
+*for a project I found that implementing useHttp hook is clean
+
+const history = useHistory();
+if used then add history as a useEffect dependency, it won't change
+
+react router 5 to 6
+
+Switch became Routes
+in <Route element = {component}/> you add the component in an element prop
+with react router 6 it always look for exact matches(so no need to add the exact property)
+
+if you want to remove he exact behaviour then add /* at the end of the path
+but if there is a more specific route below it then react router 6 will chooses that
+
+<NavLink activeClassName={classes.active}>
+</NavLink>
+was change to
+<NavLink className={(navData) => navData.isActive? classes.active: '' }>//you can also use the style prop
+</NavLink>
+
+Redirect is now called Navigate
+<Route path="/" element={<Navigate replace to "welcome" />} />
+
+with version 6 it is mandatory to wrap your routes with Routes component
+
+for nested route
+in the parent router you should add /* at the end of the route
+for the child we don't need to repeat the parent path, we add the rest of the path (path="new-user")
+same for links if added inside a child route
+
+now you can also write nested routes as below
+<Route element = {component}>
+    <Route element = {childComponent}/>
+</Route>
+and to tell react where the nested component should be inserted when using this syntax then
+import {Outlet} from "react-router-dom";
+and return <Outlet />
+
+useHistory was replaced with useNavigate
+const navigate = useNavigate();
+navigate('/welcome', {replace: true})// second parameter is optional
+navigate(-1) will take you to the previous page //1 to go forward, -2 to take you 2 pages back...
+
+for react router 6 Prompt doesn't exist, also useLocker and usePrompt but will be added back again
