@@ -1,0 +1,55 @@
+activeClassName={classes.active}
+
+useParams to get value of params
+
+import {Redirect} from react-router-dom
+<Route path="/" exact >
+    <Redirect to "welcome" />
+</Route>
+
+
+
+will a route without exact accept /welcom if we have /welcome route?
+for nested routes could we not add the full path again?
+
+blockquote html?
+figcaption html?
+
+<Route path="*" exact >
+    <NotFound />
+</Route>
+
+programatic navigation:
+import {useHistory} from 'react-router-dom';
+const history = useHistory();
+history.push('/quotes')
+//do the code below this gets executed?
+
+import {Prompt} from 'react-router-dom'
+
+<Fragment>
+<Prompt when={true} message={(location) => 'Are you sure you want to leave? All your entered data will be lost!'} />
+//location object holds info about the page we're trying to go to which will allow us to include the path we're trying to go to in this message we're showing
+</Fragment>
+
+useLocation to access location information so we can get query params
+history.push rerenders the component event if we stayed on the same page because history is changed
+do history.replace have similar action if nothing was changed?
+
+//to modify the queryParams string to object //note URLSearchParams is a js fn
+const location = useLocation();
+const queryParams = new URLSearchParams(location.search)
+
+const isSortingAscending = queryParams.get('sort');
+
+inside <Route></Route> you can either render a component or any jsx code
+
+import {useRouteMatch} from "react-router-dom"
+
+const match = useRouteMatch()
+now in the nested route you can write the beginning of the path dynamically ${match.path}
+
+history.push({
+    pathname: location.pathname,
+    search: ?sort='asc'
+})
