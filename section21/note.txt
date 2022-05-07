@@ -1,0 +1,20 @@
+1- Test Code
+2- Optimize Code
+3- Build App for Production
+4- Upload Production Code to Server
+5- Configure Server
+
+2- Lazy Loading:
+import React, { Suspense } from "react";
+const NewQuote = React.lazy(() => import('./pages/NewQuote'));
+now wrape Suspense around the place where we are using React.lazy, so around my routes
+<Suspense fallback={<p>Loading...</p>}>
+
+also optimize it in different ways like using React memo
+
+3- npm run build
+
+4- deploy app on a static hosting provider
+
+firebase hosting:disable
+and on firebase you can select your old deployment and delete it
