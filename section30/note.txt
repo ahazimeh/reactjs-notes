@@ -1,0 +1,5 @@
+react echo system:
+gatsby, preact, react native
+
+stay updated, you can use the official react js website and have a look at their blog to learn about interresting changes experiments initiatives and more
+also go to twitter tech and react community
