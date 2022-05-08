@@ -134,3 +134,16 @@ classNames={{
     appear: "", //if the elemenet is rendered for the first time to the dom
     appearActive: "", //if the elemenet is rendered for the first time to the dom
 }}
+
+//Transition group, it can be used when we are where you output lists
+
+<TransitionGroup component="ul" className="List"> //component is div by default
+    {listItems}
+</TransitionGroup>
+//adding CSSTransition or Transition is required when using TransitionGroup
+//the in property for the CSSTransition will be set automatically by TransitionGroup
+<CSSTransition key={index} classNames="fade" timeout={300}>
+    <li className="ListItem" onClick={() => this.removeItemHandler(index)}>
+        {item}
+    </li>
+</CSSTransition>
