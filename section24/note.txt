@@ -123,3 +123,14 @@ import CSSTransition from "react-transition-group/CSSTransition";
 .fade-slide-exit-active {
   animation: closeModal 1s ease-out forwards;
 }
+
+for css transition we can define out own classes rather than these automatically generated classes
+classNames property can accept this object
+classNames={{
+    enter: "",
+    enterActive: "ModalOpen",
+    exit: "",
+    exitActive: "ModalClosed",
+    appear: "", //if the elemenet is rendered for the first time to the dom
+    appearActive: "", //if the elemenet is rendered for the first time to the dom
+}}
