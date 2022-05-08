@@ -75,3 +75,51 @@ npm i react-transition-group
 by setting this in property, this decides whether the elements wrapped inside should be shown or not
 and the transition component manages 4 internal states:
 Entering, Entered, Exiting, Exited
+
+const animationTiming = {
+  enter: 400,
+  exit: 1000,
+};
+you can pass this object to timeout property to specify different entering and exiting time duration
+
+
+// there are able to execute a function at these time intervals by passing these props
+onEnter={() => console.log("onEnter")}
+onEntering={() => console.log("onEntering")}
+onEntered={() => console.log("onEntered")}
+onExit={() => console.log("onExit")}
+onExiting={() => console.log("onExiting")}
+onExited={() => console.log("onExited")}
+
+
+replacement of Transition could be CSSTransition
+
+import CSSTransition from "react-transition-group/CSSTransition";
+<CSSTransition
+    mountOnEnter
+    unmountOnExit
+    in={props.show}
+    timeout={animationTiming}
+    classNames="fade-slide"
+>
+    <div className="Modal">
+    <h1>A Modal</h1>
+    <button className="Button" onClick={props.closed}>
+        Dismiss
+    </button>
+    </div>
+</CSSTransition>
+// the below classes will be given to the parent element(<div className="Modal">)
+.fade-slide-enter {
+}
+
+.fade-slide-enter-active {
+  animation: openModal 0.4s ease-out forwards;
+}
+
+.fade-slide-exit {
+}
+
+.fade-slide-exit-active {
+  animation: closeModal 1s ease-out forwards;
+}
