@@ -147,3 +147,13 @@ classNames={{
         {item}
     </li>
 </CSSTransition>
+
+alternative for react packages for animation:
+1-react motion
+this package tries to apply real world physics to emulate or interpolate the state in between
+2-react move
+with this package you always work with objects describing the state of an animation
+it is heavily influenced by the three js transitions
+this package can be interresting if you have complex animations
+3-react router transition
+it helps you to animate when transitioning from a route to another
