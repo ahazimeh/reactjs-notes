@@ -1,0 +1,50 @@
+import { render, screen } from "@testing-library/react";
+import Greeting from "./Greeting";
+
+describe("Greeting component", () => {//grouping tests(test suite)
+  test("renders Hello World as a text", () => {
+    render(<Greeting />);
+    //get functions will throw an error if an element isn't found
+    //query fn won't do that
+    //find fn will return a promise
+    const helloWorldElement = screen.getByText("Hello World!", { exact: true }); //default true, exact false makes it case insansitive and will match substrings
+    expect(helloWorldElement).toBeInTheDocument(); //.not.toBeInTheDocument but in this case then we have to use queryByText fn since getByText will fail
+    //
+  });
+});
+
+
+//testing that this text isn't there
+const outputElement = screen.queryByText("good to see you", {
+    exact: false,
+});
+expect(outputElement).toBeNull();
+
+
+import userEvent from "@testing-library/user-event";
+
+const buttonElement = screen.getByRole("button");
+await userEvent.click(buttonElement);
+
+
+testing a fetch request and mocking the fetch with an object
+
+import { render, screen } from "@testing-library/react";
+import Async from "./Async";
+
+describe("Async component", () => {
+  test("renders posts if request succeeds", async () => {
+    window.fetch = jest.fn(); //replace fetch with this to not send a request to the backend, //fn creates a dummy function
+    window.fetch.mockResolvedValueOnce({
+      json: async () => [{ id: "p1", title: "First post" }],
+    });
+    render(<Async />);
+
+    const listItemElements = await screen.findAllByRole(
+      "listitem",
+      { exact: true },
+      { timeout: 1000 } //default
+    ); //getAllByRole will instantly look for elements in the screen so this would wait for elements to fetch
+    expect(listItemElements).not.toHaveLength(0);
+  });
+});
