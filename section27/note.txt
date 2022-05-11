@@ -1,0 +1,7 @@
+let people: {
+    name: string;
+    age: string;
+}[];
+
+type inference:
+let course = 'React'; // no need to set : string because this will be redundant since typescript will assign this by default because it is initialized as a string
