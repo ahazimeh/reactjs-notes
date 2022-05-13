@@ -5,3 +5,21 @@ let people: {
 
 type inference:
 let course = 'React'; // no need to set : string because this will be redundant since typescript will assign this by default because it is initialized as a string
+
+type alias
+type Person = {
+    name: string;
+    age: number;
+}
+
+//functions and types
+function add (a: number, b: number): number {
+    return a + b;
+}
+
+// Generics
+// it helps typescript to pick types when we want the returned type to be recognized but we also want to make the fn flexible to accept both string and integer
+function insertAtBeginning<T>(array: T[], value: T) {
+  const newArray = [value, ...array];
+  return newArray;
+}
