@@ -25,3 +25,16 @@ function insertAtBeginning<T>(array: T[], value: T) {
 }
 let numbers: Array<number> = [1, 2, 3];
 let numbers: number[] = [1, 2, 3]; //this 1 is a syntactic sugar
+
+//add when creating a new project --template typescript
+
+//to add types and keep children property that react provides to us
+const Todos: React.FC<{ items: string[] }> = (props) => {
+  return (
+    <ul>
+      {props.items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+};
