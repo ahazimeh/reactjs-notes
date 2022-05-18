@@ -38,3 +38,5 @@ const Todos: React.FC<{ items: string[] }> = (props) => {
     </ul>
   );
 };
+
+***//todos is a class used as a type;
