@@ -40,3 +40,7 @@ const Todos: React.FC<{ items: string[] }> = (props) => {
 };
 
 ***//todos is a class used as a type;
+
+const submitHandler = (event: React.FormEvent) => {//typescript onSubmit //MouseEvent
+
+}
