@@ -52,3 +52,6 @@ Since every <input> element, regardless of type, is based on the HTMLInputElemen
 
 function props
 const NewTodo: React.FC<{onAddTodo: (text: string) => void }>
+
+state
+const [todos, setTodos] = useState<Todo[]>([]);
