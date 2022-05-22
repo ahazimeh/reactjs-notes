@@ -62,3 +62,7 @@ export const TodosContext = React.createContext<TodosContextObj>({
   addTodo: () => {},
   removeTodo: (id: string) => {},
 });
+
+// tsconfig
+
+allowJs allows us to include .js files (for mixing js and ts files)
