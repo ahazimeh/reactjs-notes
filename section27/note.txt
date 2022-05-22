@@ -55,3 +55,10 @@ const NewTodo: React.FC<{onAddTodo: (text: string) => void }>
 
 state
 const [todos, setTodos] = useState<Todo[]>([]);
+
+// context
+export const TodosContext = React.createContext<TodosContextObj>({
+  items: [],
+  addTodo: () => {},
+  removeTodo: (id: string) => {},
+});
