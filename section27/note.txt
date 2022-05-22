@@ -49,3 +49,6 @@ const submitHandler = (event: React.FormEvent) => {//typescript onSubmit //Mouse
 useRef<HTMLInputElement>(null)
 if you visit  //mdn input you will find somewhere
 Since every <input> element, regardless of type, is based on the HTMLInputElement interface
+
+function props
+const NewTodo: React.FC<{onAddTodo: (text: string) => void }>
